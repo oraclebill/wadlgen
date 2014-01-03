@@ -28,8 +28,8 @@ module Wadlgen
 
         next if action == 'edit'
 
-        resource = ress.get_resource(nil, route.path)
-        method = resource.get_method(route.verb, defaults[:action])
+        resource = ress.get_resource(nil, route.path.spec)
+        method = resource.get_method(route.verb.source, defaults[:action])
 
         req = method.add_request
 
